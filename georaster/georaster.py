@@ -707,7 +707,7 @@ class __Raster:
             print("Xpixels and Ypixels must have the same size")
             return 1
 
-        if (Xpixels is None) & (Ypixels is None):
+        if type(Xpixels) is not np.ndarray and type(Ypixels) is not np.ndarray:
             Xpixels = np.arange(self.nx)
             Ypixels = np.arange(self.ny)
             Xpixels, Ypixels = np.meshgrid(Xpixels,Ypixels)
